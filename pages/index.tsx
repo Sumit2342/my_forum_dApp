@@ -39,7 +39,7 @@ type PostDetail = {
 };
 
 export default function Home() {
-  const postManagerContract = "0x0f02fc119bd9105be396b0b7eFC64256A21D64fb"; //postManager smart contract address
+  const postManagerContract = "0x97047DF2418Cd69EE3670d6cD8CfbfcD9D7F3C00"; //postManager smart contract address
 
   //variables
   const [token, setToken] = useState<string>("");
@@ -63,7 +63,7 @@ export default function Home() {
   const [file, setFile] = useState<null | Buffer>(null);
   const [filename, setFilename] = useState<string>("");
   const [fileDetails, setFileDetails] = useState<string>("");
-  const [imageUrl, setImageUrl] = useState<string>("");
+  const [imageUrl, setImageUrl] = useState<string>(""); 
 
   function openModal() {
     setIsLoading(true);
@@ -450,7 +450,6 @@ export default function Home() {
 
       const axiosResponse = await axios(config);
       const postDataObject: Post[] = axiosResponse.data;
-
       const currentPostData: Post = postDataObject.filter(
         (data) => data.post_ID === postData.postId
       )[0];
